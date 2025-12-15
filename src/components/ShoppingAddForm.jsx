@@ -14,6 +14,14 @@ class ShoppingAddForm extends React.Component {
             [e.target.name]: e.target.value
         })
     }
+    onAdd = (e) => {
+        const Data = {
+            title: this.state.title,
+            number: this.state.number,
+        }
+        console.log(Data);
+        
+    }
     render() {
         const {title, number} = this.state;
         return(
@@ -21,18 +29,18 @@ class ShoppingAddForm extends React.Component {
         <input type="text" 
         className="Title"
         name="title"
-         placeholder="Title..."
-            onChange={this.onChange}
-            value={title}
- />
+        placeholder="Title..."
+        onChange={this.onChange}
+        value={title}
+        />
         <input type="number"
          className="number" 
-            name="number"
+         name="number"
          placeholder="14"
-            onChange={this.onChange}
-            value={number}
+         onChange={this.onChange}
+         value={number}
          />
-    <button>Add</button>
+    <button  onClick={this.onAdd}>Add</button>
     </div>
     )}
 }
